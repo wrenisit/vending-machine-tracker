@@ -6,7 +6,7 @@ class Machine < ApplicationRecord
   has_many :snacks, through: :machine_snacks
 
   def average_price
-    cost = snacks.average(:price)
+    cost = snacks.average(:price).to_f
     number_to_currency(cost)
   end
 end
