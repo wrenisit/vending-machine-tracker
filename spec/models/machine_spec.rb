@@ -15,4 +15,5 @@ RSpec.describe Machine, type: :model do
 
       expect(dons.average_price).to eq("$1.67")
     end
+
 end
