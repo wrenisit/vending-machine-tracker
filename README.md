@@ -31,7 +31,7 @@ Vending machines may be stocked with different snacks, and the same snack may be
 ```
 User Story 1 of 3
 
-As a user
+As a visitor
 When I visit a vending machine show page
 I see the name of all of the snacks associated with that vending machine along with their price
 ```
