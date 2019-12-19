@@ -4,9 +4,9 @@ RSpec.describe "machine show page" do
   it "has a show page for machine" do
     owner = Owner.create(name: "Sam's Snacks")
     dons  = owner.machines.create(location: "Don's Mixed Drinks")
-    item_1 = dons.snacks.create(name: "Chex Mix", price: 2.75)
-    item_2 = dons.snacks.create(name: "Skittles", price: 1.00)
-    item_3 = dons.snacks.create(name: "Granola Bar", price: 0.75)
+    item_1 = dons.snacks.create(name: "Chex Mix", price: 2.5)
+    item_2 = dons.snacks.create(name: "Skittles", price: 3)
+    item_3 = dons.snacks.create(name: "Granola Bar", price: 1)
 
     visit "machines/#{dons.id}"
     expect(current_path).to eq("/machines/#{dons.id}")
@@ -16,6 +16,6 @@ RSpec.describe "machine show page" do
     expect(page).to have_content(item_2.price)
     expect(page).to have_content(item_3.name)
     expect(page).to have_content(item_3.price)
-
+    expect(page).to have_content("Average Price: $2.00")
   end
 end
