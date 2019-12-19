@@ -8,7 +8,7 @@ RSpec.describe "machine show page" do
     item_2 = dons.snacks.create(name: "Skittles", price: 1.00)
     item_3 = dons.snacks.create(name: "Granola Bar", price: 0.75)
 
-    visit machines_path
+    visit "machines/#{dons.id}"
     expect(current_path).to eq("/machines/#{dons.id}")
     expect(page).to have_content(item_1.name)
     expect(page).to have_content(item_1.price)
